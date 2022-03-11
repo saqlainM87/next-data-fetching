@@ -1,19 +1,19 @@
 // client side rendered
-import { useEffect, useState } from 'react';
-import { YOUR_API_URL } from '../lib/api';
+import { useEffect, useState } from 'react'
+import { YOUR_API_URL } from '../lib/api'
 
 export default function ClientSideRendered() {
-  const [state, setState] = useState([]);
+  const [state, setState] = useState([])
 
   async function getData() {
-    const res = await fetch(YOUR_API_URL);
-    const data = await res.json();
-    setState(data);
+    const res = await fetch(YOUR_API_URL)
+    const data = await res.json()
+    setState(data)
   }
 
   useEffect(() => {
-    getData();
-  }, []);
+    getData()
+  }, [])
 
   return (
     <>
@@ -21,5 +21,5 @@ export default function ClientSideRendered() {
         <h2 key={e.id}>{e.name}</h2>
       ))}
     </>
-  );
+  )
 }
